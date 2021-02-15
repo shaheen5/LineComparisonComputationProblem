@@ -8,11 +8,16 @@ public class LineComputationProgram {
 	public static void main(String args[]) {
 		System.out.println("Welcome to Line Comparison Computation Program");
 		Scanner sc=new Scanner(System.in);
-		double length=CalculateLength(sc);
-		System.out.println("Length of Line is "+length);
+		System.out.println("Line 1 Co-ordinates:-");
+		double length1=calculateLength(sc);
+		System.out.println("Length of Line 1 is "+length1);
+		System.out.println("Line 2 Co-ordinates:-");
+		double length2=calculateLength(sc);
+		System.out.println("Length of Line 2 is "+length2);
+		checkEquality(length1,length2);
 	}
 	
-	static double CalculateLength(Scanner sc) {
+	static double calculateLength(Scanner sc) {
 		System.out.println("Enter Point1 co-ordinates:-");
 		System.out.println("Enter x1: ");
 		double x1_coordinate=sc.nextInt();
@@ -25,6 +30,15 @@ public class LineComputationProgram {
 		double y2_coordinate=sc.nextInt();
 		return Math.sqrt((x2_coordinate-x1_coordinate)*(x2_coordinate-x1_coordinate)+(y2_coordinate-y1_coordinate)*(y2_coordinate-y1_coordinate)); 
 		
+		
+	}
+	static void checkEquality(double length1,double length2) {
+		String len1=Double.toString(length1);
+		String len2=Double.toString(length2);
+		if (len1.equals(len2))
+			System.out.println("Lines are Equal!");
+		else
+			System.out.println("Lines are not Equal!");
 		
 	}
 
