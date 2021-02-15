@@ -2,6 +2,7 @@ package LineComparisonProblem;
 
 import java.util.Scanner;
 import java.lang.Math;
+import java.lang.Double;
 
 public class LineComputationProgram {
 	
@@ -15,6 +16,7 @@ public class LineComputationProgram {
 		double length2=calculateLength(sc);
 		System.out.println("Length of Line 2 is "+length2);
 		checkEquality(length1,length2);
+		compareLines(length1,length2);
 	}
 	
 	static double calculateLength(Scanner sc) {
@@ -41,5 +43,15 @@ public class LineComputationProgram {
 			System.out.println("Lines are not Equal!");
 		
 	}
-
+	
+	static void compareLines(double l1,double l2) {
+		Double length1=Double.valueOf(l1);
+		Double length2=Double.valueOf(l2);
+		if(length1.compareTo(length2)==0)
+			System.out.println("length1 is equal to length2!!");
+		else if(length1.compareTo(length2)<0)
+			System.out.println("length1 is less than length2!!");
+		else
+			System.out.println("length1 is greater than length2!!");
+	}
 }
